@@ -16,10 +16,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-unless node['apache']['listen_ports'].include?("443")
-  node.set['apache']['listen_ports'] = node['apache']['listen_ports'] + ["443"]
-end
-
 ports = node['apache']['listen_ports']
 
 if platform_family?("rhel", "fedora", "suse")
